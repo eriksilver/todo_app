@@ -3,11 +3,7 @@
 console.log("appjs before module declared");
 
 var myApp = angular.module('blocitoffApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
   'ui.router',
-  'ui.bootstrap',
   'firebase'
   ]);
 
@@ -32,13 +28,11 @@ myApp.directive('toggleCheck', function() {
        // restrict: 'E', //instructs to treat as an element, <slider>; e.g. wont run on <div slider>
        // scope: {
        //    onChange: '&'
-       //},  
+       //},
        //link is ng function for DOM manip & logic
-        link: function(scope, element, attributes) { 
+        link: function(scope, element, attributes) {
           console.log("start of link function");
           // These values
         }
     }
 });
-
-

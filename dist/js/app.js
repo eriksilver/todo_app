@@ -1,3 +1,38 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
 
-},{}]},{},[1]);
+console.log("appjs before module declared");
+
+var myApp = angular.module('blocitoffApp', [
+  'ui.router',
+  'firebase'
+  ]);
+
+myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+  });
+
+console.log("appjs after module declared");
+
+myApp.directive('toggleCheck', function() {
+    console.log("start of hideTasks directive");
+
+    //do logic to determine hide state
+    //If task is checked, it should be hidden
+    //If task is more than 7 days old, it should be hidden
+
+    //return a status and pass to link function
+
+    return {
+       // templateUrl: '/templates/directives/slider.html', //the path to an HTML template
+       // replace: true, //replace the <slider> element with the directive's HTML rather than insert it
+       // restrict: 'E', //instructs to treat as an element, <slider>; e.g. wont run on <div slider>
+       // scope: {
+       //    onChange: '&'
+       //},
+       //link is ng function for DOM manip & logic
+        link: function(scope, element, attributes) {
+          console.log("start of link function");
+          // These values
+        }
+    }
+});

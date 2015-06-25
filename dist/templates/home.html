@@ -1,1 +1,45 @@
-<h1>Home Page</h1>
+
+<div class="active-history">
+	<ul>
+		<li><a ui-sref="history">Completed Tasks</a></li>
+	</ul>
+</div>
+
+<!-- Add new to do -->
+<form novalidate ng-submit="addTask()">
+	<div class="inputContainer">
+		<input
+		type="text"
+		id="description"
+		class="taskName"
+		placeholder="Enter your to do"
+		ng-model="newTask.text"
+
+		/>
+		<label for="description">Enter tasks here</label>
+	</div>
+</form>
+
+<div class="row"></div> <!-- extra row -->
+
+<div > <!-- task list and ui-view -->
+	<ul class="taskList">
+		<li class="taskItem" ng-repeat="task in tasks" ng-init="checkTaskExpiration(task.$id)" ng-hide="task.status === true">
+
+			<!-- edit a task-->
+			<input ng-model="task.text" ng-change="tasks.$save(task)" />
+			<select name="Priority" ng-model="task.priority" ng-change="tasks.$save(task)">
+				<option id=3 value="low">Low</option>
+				<option id=2 value="medium">Medium</option>
+				<option id=1 value="high">High</option>
+			</select>
+
+			<!-- mark task complete; completed task == true; default == false -->
+			<input type="checkbox" ng-model="task.status" class="taskComplete" ng-change="tasks.$save(task)">Complete</input>
+
+			<!-- delete a task -->
+			<button ng-click="tasks.$remove(task)">Delete</button>
+
+		</li>
+	</ul>
+</div><!--task list-->
