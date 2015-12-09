@@ -22,4 +22,4 @@ Components:
 This app was built on top of a base Angular app, the [Base Front-End Project](https://github.com/Bloc/base-frontend-project) by Bloc.
 
 Local: ```npm start``` <br>
-Web: [https://bloc-jams-turnitup.herokuapp.com/](https://bloc-jams-turnitup.herokuapp.com/)
+Web: [https://whattodonow.herokuapp.com/](https://whattodonow.herokuapp.com/)
